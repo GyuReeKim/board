@@ -23,7 +23,7 @@ def create(request):
     # todo.title = title
     # todo.content = content
     # todo.due_date = due_date
-    # todo.save()
+    # todo.save() # 바로 저장하지 않고 쓰일때 사용
 
     # create는 안에 인스턴스를 만들고 생성까지 해준다.
     todo = Todo.objects.create(
