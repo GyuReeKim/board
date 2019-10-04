@@ -1,9 +1,14 @@
 from django.urls import path
 from . import views # '.' 대신 'todos'를 써도 된다. '.' : 같은 폴더
 
-urlpatterns = [
-    path('', views.index),
+# app을 여러개 생성해 줄 수 있기 때문에 app_name으로 묶어준 후 변수를 설정해주는 편이 좋다.
+app_name = 'todos'
 
-    path('new/', views.new),
-    path('create/', views.create),
+urlpatterns = [
+    path('', views.index, name="index"),
+
+    path('new/', views.new, name="new"), # new/라는 경로를 new라는 변수에 저장해서 사용한다.
+    path('create/', views.create, name="create"),
+
+    path('<int:id>/delete/', views.delete, name="delete")
 ]
