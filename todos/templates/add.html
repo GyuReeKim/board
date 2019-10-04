@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <!-- action이 빈칸일 경우 제자리에 있게 된다. -->
+  <form action="" method="post">
+    <!-- 'csrf_token'은 django 안에서 들어오는 input값을 hidden으로 처리해준다. -->
+    {% csrf_token %}
+    작성자: <input type="text" name="author">
+    제목 : <input type="text" name="title">
+    내용 : <input type="text" name="content">
+    마감일 : <input type="date" name="due-date">
+    <input type="submit" value="저장">
+  </form>
+{% endblock %}
