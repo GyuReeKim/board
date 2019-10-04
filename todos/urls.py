@@ -10,8 +10,10 @@ urlpatterns = [
     # Create
     path('new/', views.new, name="new"), # new/라는 경로를 new라는 변수에 저장해서 사용한다.
     path('create/', views.create, name="create"),
-    # new와 create를 합친다.
+    # new + create
     path('add/', views.add, name="add"),
     # Delete
-    path('<int:id>/delete/', views.delete, name="delete")
+    path('<int:id>/delete/', views.delete, name="delete"),
+    # Update
+    path('<int:id>/update/', views.update, name="update"),
 ]

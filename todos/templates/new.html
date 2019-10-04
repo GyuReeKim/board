@@ -2,6 +2,8 @@
 
 {% block body %}
   <!-- form method의 기본값은 "get" -->
+  <!-- get: 데이터를 가져와서 보여주는 역할 -->
+  <!-- post: 데이터를 보내면 서버에서 처리해주는 역할 (CRUD)) -->
   <form action="{% url 'todos:create' %}" method="post">
     <!-- 'csrf_token'은 django 안에서 들어오는 input값을 hidden으로 처리해준다. -->
     {% csrf_token %}
